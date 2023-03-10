@@ -1,15 +1,15 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { createUseStyles } from "react-jss";
 import { Button, Colors, FontWeight } from "words-ui";
 
 const useStyles = createUseStyles({
-  text: { fontWeight: FontWeight.bold, color: Colors.info },
+  text: { color: Colors.info, fontWeight: FontWeight.bold },
 });
 
 const App = () => {
   const classes = useStyles();
   const [count, setCount] = useState(0);
-  const onClick = () => setCount(count + 1);
+  const onClick = useCallback(() => setCount(count + 1), [count]);
 
   return (
     <>

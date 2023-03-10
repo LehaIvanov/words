@@ -54,7 +54,7 @@ module.exports = defineConfig({
           /*
            * PropsWithChildren: {
            *   fixWith: "ChildrenProps",
-           *   message: 'Prefer Reactor library "ChildrenProps" type over React "PropsWithChildren" type',
+           *   message: 'Prefer Words UI library "ChildrenProps" type over React "PropsWithChildren" type',
            * },
            */
           "React.FC":
