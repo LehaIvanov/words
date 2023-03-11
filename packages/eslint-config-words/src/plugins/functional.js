@@ -17,55 +17,9 @@ module.exports = defineConfig({
   rules: {
     "functional/functional-parameters": "off",
     "functional/no-conditional-statements": "off",
+    "functional/no-expression-statements": ["warn", { ignoreVoid: true }],
     "functional/no-return-void": "off",
     "functional/prefer-immutable-types": "off",
-    "functional/type-declaration-immutability": [
-      "error",
-      // Copied from https://github.com/eslint-functional/eslint-plugin-functional/blob/main/docs/rules/type-declaration-immutability.md#recommended-and-lite
-      {
-        rules: [
-          {
-            comparator: "AtLeast",
-            identifiers: "I?Immutable.+",
-            immutability: "Immutable",
-          },
-          {
-            comparator: "AtLeast",
-            identifiers: "I?ReadonlyDeep.+",
-            immutability: "ReadonlyDeep",
-          },
-          {
-            comparator: "AtLeast",
-            fixer: [
-              {
-                pattern: "^(Array|Map|Set)<(.+)>$",
-                replace: "Readonly$1<$2>",
-              },
-              {
-                pattern: "^(.+)$",
-                replace: "Readonly<$1>",
-              },
-            ],
-            identifiers: "I?Readonly.+",
-            immutability: "ReadonlyShallow",
-          },
-          {
-            comparator: "AtMost",
-            fixer: [
-              {
-                pattern: "^Readonly(Array|Map|Set)<(.+)>$",
-                replace: "$1<$2>",
-              },
-              {
-                pattern: "^Readonly<(.+)>$",
-                replace: "$1",
-              },
-            ],
-            identifiers: "I?Mutable.+",
-            immutability: "Mutable",
-          },
-        ],
-      },
-    ],
+    "functional/type-declaration-immutability": "off",
   },
 });

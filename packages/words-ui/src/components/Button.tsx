@@ -5,10 +5,10 @@ const useStyles = createUseStyles({
   button: { cursor: "pointer", fontWeight: FontWeight.bold },
 });
 
-type ButtonProps = Readonly<{
+type ButtonProps = {
   onClick: React.MouseEventHandler<HTMLButtonElement>;
   text: string;
-}>;
+};
 
 export const Button = ({ text, onClick }: ButtonProps) => {
   const classes = useStyles();
