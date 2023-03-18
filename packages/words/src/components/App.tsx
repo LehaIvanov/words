@@ -1,4 +1,3 @@
-import React from "react";
 import { createUseStyles } from "react-jss";
 import { Colors, FontWeight } from "words-ui";
 import { useStore } from "../context/Store";
@@ -11,7 +10,7 @@ const useStyles = createUseStyles({
 
 const App = () => {
   const classes = useStyles();
-  const [data, _] = useStore();
+  const [data] = useStore();
   const { userName, count } = data;
 
   return (
