@@ -12,6 +12,7 @@ module.exports = defineConfig({
     ],
     "react/jsx-filename-extension": ["error", { extensions: [".tsx"] }],
     "react/jsx-max-depth": ["error", { max: 10 }],
+    "react/jsx-no-bind": "off",
     "react/jsx-no-literals": "off",
     "react/jsx-props-no-spreading": "off",
     "react/no-children-prop": "off",
