@@ -1,27 +1,16 @@
-import { createUseStyles } from "react-jss";
-import { Colors, FontWeight } from "words-ui";
 import { useStore } from "../context/Store";
-import { SuperButton } from "./SuperButton";
-import { UserNameInput } from "./UserNameInput";
+import { Form } from "./Form";
+import { Row } from "./Row";
 
-const useStyles = createUseStyles({
-  text: { color: Colors.info, fontWeight: FontWeight.bold },
-});
-
-const App = () => {
-  const classes = useStyles();
-  const [data] = useStore();
-  const { userName, count } = data;
+export const App = () => {
+  const { data } = useStore();
 
   return (
     <>
-      <UserNameInput />
-      <p className={classes.text}>
-        {userName === "" ? "You" : userName} clicked {count} times
-      </p>
-      <SuperButton />
+      <Form />
+      {data.map(user => (
+        <Row key={user.id} user={user} />
+      ))}
     </>
   );
 };
-
-export default App;

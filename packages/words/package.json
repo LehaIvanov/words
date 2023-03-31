@@ -7,6 +7,10 @@
     "preview": "yarn build && vite preview --open"
   },
   "dependencies": {
+    "uuid": "^9.0.0",
     "words-ui": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/uuid": "^9.0.1"
   }
 }
